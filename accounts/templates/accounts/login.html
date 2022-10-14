@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load django_bootstrap5 %}
+
+{% block content %}
+<form action="" method="">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% bootstrap_button button_type="submit" button_class="btn-primary form-control" content="로그인" %}
+</form>
+<a href="{% url 'accounts:signup' %}">
+    {% bootstrap_button button_type="submit" button_class="btn-danger form-control mt-3" content="회원가입" %}
+</a>
+{% endblock %}
+
