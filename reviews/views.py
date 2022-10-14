@@ -47,5 +47,7 @@ def update(request, review_pk):
     return render(request, "reviews/create.html", {"form": form})
 
 
-def delete(request):
-    pass
+def delete(request, review_pk):
+    Review.objects.get(id=review_pk).delete()
+
+    return redirect("reviews:index")
