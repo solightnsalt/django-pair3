@@ -6,7 +6,7 @@ app_name = "reviews"
 urlpatterns = [
     path("create/", views.create, name="create"),
     path("", views.index, name="index"),
-    path("detail/<int:user_id>", views.detail, name="detail"),
-        path("update/", views.update, name="update"),
-    path("delete/", views.delete, name="delete"),
+    path("<int:review_pk>/", views.detail, name="detail"),
+    path("<int:review_pk>/update/", views.update, name="update"),
+    path("<int:review_pk>/delete/", views.delete, name="delete"),
 ]

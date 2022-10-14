@@ -16,7 +16,7 @@ def index(request):
     return render(request, "accounts/index.html", context)
 
 @login_required
-def detail(request, user_id):
+def detail(request, user_pk):
     return render(request, "accounts/detail.html")
 
 
