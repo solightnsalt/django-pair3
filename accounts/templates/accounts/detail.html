@@ -3,27 +3,30 @@
 {% load django_bootstrap5 %}
 
 {% block content %}
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Username</th>
-      <th scope="col">date</th>
-      <th scope="col">e-mail</th>
-      <th scope="col">role</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">{{ user.id }}</th>
-      <td>{{ user.username }}</td>
-      <td>{{ user.date_joined }}</td>
-      <td>{{ user.email }}</td>
-      <td>{{ user.is_staff }}</td>
-    </tr>
-  </tbody>
-</table>
-<div class="d-flex justify-content-end">
-  <a href="{% url 'accounts:update' user.id %}"><button type="submit" class="btn btn-secondary">수정</button></a>
-</div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">회원번호</th>
+        <th scope="col">ID</th>
+        <th scope="col">이름</th>
+        <th scope="col">e-mail</th>
+        <th scope="col">가입일</th>
+        <th scope="col">등급</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{ user.id }}</th>
+        <td>{{ user.username }}</td>
+        <td>{{ user.full_name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.date_joined }}</td>
+        <td>{{ user.is_staff }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="d-flex justify-content-end">
+    <a href="{% url 'accounts:update' %}" type="button" class="btn btn-secondary">수정
+    </a>
+  </div>
 {% endblock %}
