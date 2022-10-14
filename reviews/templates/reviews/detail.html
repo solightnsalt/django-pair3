@@ -13,4 +13,13 @@
   <p>평점 : {{ review.grade }}</p>
   <p>{{ review.content }}</p>
 
+  <div class="d-flex justify-content-end">
+    <a class="mx-2" href="{% url 'reviews:update' review.id %}">
+      {% bootstrap_button button_type="submit" button_class="btn-primary" content="수정" %}
+    </a>
+    <a href="{% url 'reviews:update' review.id %}">
+      {% bootstrap_button button_type="submit" button_class="btn-danger" content="삭제" %}
+    </a>
+  </div>
+
 {% endblock %}
