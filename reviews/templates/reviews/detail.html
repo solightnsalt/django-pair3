@@ -17,7 +17,7 @@
     <a class="mx-2" href="{% url 'reviews:update' review.id %}">
       {% bootstrap_button button_type="submit" button_class="btn-primary" content="수정" %}
     </a>
-    <a href="{% url 'reviews:update' review.id %}">
+    <a href="{% url 'reviews:delete' review.id %}">
       {% bootstrap_button button_type="submit" button_class="btn-danger" content="삭제" %}
     </a>
   </div>
