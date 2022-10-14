@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load django_bootstrap5 %}
+
+{% block content %}
+
+  <h1 class="mt-3">{{ review.title }}</h1>
+  <h2>영화 제목 : {{ review.movie_name }}</h2>
+  <div class="d-flex flex-column align-items-end">
+      <p>작성 시간 : {{ review.created_at }}</p>
+      <p>수정 시간 : {{ review.updated_at }}</p>
+  </div>
+  <p>평점 : {{ review.grade }}</p>
+  <p>{{ review.content }}</p>
+
+{% endblock %}

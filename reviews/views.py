@@ -24,6 +24,12 @@ def index(request):
     return render(request, "reviews/index.html", {'users': users})
 
 
+def detail(request, user_id):
+    review = Review.objects.get(id=user_id)
+
+    return render(request, "reviews/detail.html", {'review': review})
+
+
 def update(request):
     pass
 
