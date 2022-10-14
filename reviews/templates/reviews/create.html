@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load django_bootstrap5 %}
+
+{% block content %}
+<h1 class="mt-3">리뷰 작성</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <button type="submit" class="btn btn-secondary">작성</button>
+</form>
+
+{% endblock %}
