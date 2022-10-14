@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load django_bootstrap5 %}
+
+{% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">ID</th>
+      <th scope="col">Username</th>
+      <th scope="col">date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in users %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td><a href="{% url 'accounts:detail' user.id %}" style="text-decoration: none; color: black">{{ user.id }}</a>
+      </td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.date_joined }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
