@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # apps
+    "reviews",
     "accounts",
     # pkg
     "django_bootstrap5",
