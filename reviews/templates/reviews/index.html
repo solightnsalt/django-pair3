@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load django_bootstrap5 %}
+
+{% block content %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">title</th>
+        <th scope="col">movie name</th>
+        <th scope="col">grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td><a class="text-decoration-none text-dark" href="{% url 'reviews:detail' user.id %}">{{ user.title }}</a>
+        </td>
+        <td>{{ user.movie_name }}</td>
+        <td>{{ user.grade }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}
